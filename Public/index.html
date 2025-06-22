@@ -1,95 +1,13 @@
-import { motion } from "framer-motion";
-import { Github, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-
-export default function Portfolio() {
-  const projects = [
-    {
-      title: "Telegram Scheduler Bot",
-      desc: "Автоматизировал напоминалки о расписании (Node.js + telegraf).",
-      link: "https://github.com/youruser/telegram-scheduler-bot",
-    },
-    {
-      title: "2-D Platformer (Prototype)",
-      desc: "Игровой набросок на Python + Pygame.",
-      link: "https://github.com/youruser/platformer",
-    },
-    {
-      title: "Responsive Portfolio (этот сайт)",
-      desc: "React + Tailwind + Framer Motion.",
-      link: "#",
-    },
-  ];
-
-  return (
-    <main className="min-h-screen flex flex-col">
-      {/* ── HERO ───────────────────────── */}
-      <section className="flex-1 flex flex-col items-center justify-center bg-gradient-to-b from-indigo-50 to-white dark:from-slate-900 dark:to-slate-950 px-4">
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: .7 }}
-          className="text-3xl md:text-5xl font-bold text-center mb-4"
-        >
-          <span className="text-indigo-600 dark:text-indigo-400">Your Name</span>
-          <span className="mx-1">·</span>
-          Junior Developer
-        </motion.h1>
-
-        <p className="text-center max-w-xl text-gray-600 dark:text-gray-400 mb-6">
-          Люблю быстрые прототипы, вечный рефакторинг и котиков в консоли.
-        </p>
-
-        <div className="flex gap-3">
-          <Button asChild size="lg">
-            <a href="mailto:you@example.com">
-              <Mail className="mr-2 h-4 w-4" /> Hire me
-            </a>
-          </Button>
-          <Button asChild variant="secondary" size="lg">
-            <a href="https://github.com/youruser">
-              <Github className="mr-2 h-4 w-4" /> GitHub
-            </a>
-          </Button>
-        </div>
-      </section>
-
-      {/* ── PROJECTS ───────────────────── */}
-      <section className="container mx-auto py-16 px-4">
-        <h2 className="text-2xl font-semibold mb-8">Projects</h2>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Card className="h-full">
-                <CardContent className="p-6 flex flex-col">
-                  <h3 className="text-lg font-medium mb-2">{p.title}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 flex-1">
-                    {p.desc}
-                  </p>
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    className="mt-4 text-indigo-600 hover:underline"
-                  >
-                    View on GitHub →
-                  </a>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── FOOTER ─────────────────────── */}
-      <footer className="text-center py-6 text-sm text-gray-500 dark:text-gray-600">
-        © {new Date().getFullYear()} Your Name. Crafted with React & Tailwind.
-      </footer>
-    </main>
-  );
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ProtfolioKNU</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- React сам подставит скрипты из build -->
+  </body>
+</html>

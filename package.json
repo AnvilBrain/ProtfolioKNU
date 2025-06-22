@@ -1,0 +1,21 @@
+{
+  "name": "ProtfolioKNU",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://AnvilBrain.github.io/ProtfolioKNU",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^10.12.16",
+    "lucide-react": "^0.271.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
