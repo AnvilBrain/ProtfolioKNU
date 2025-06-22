@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ProtfolioKNU/static/css/main.682ad760.css",
+    "main.js": "/ProtfolioKNU/static/js/main.f94ceb1e.js",
+    "index.html": "/ProtfolioKNU/index.html",
+    "main.682ad760.css.map": "/ProtfolioKNU/static/css/main.682ad760.css.map",
+    "main.f94ceb1e.js.map": "/ProtfolioKNU/static/js/main.f94ceb1e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.682ad760.css",
+    "static/js/main.f94ceb1e.js"
+  ]
+}
