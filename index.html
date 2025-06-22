@@ -7,74 +7,75 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Telegram Scheduler Bot",
-      desc: "Automates daily timetable notifications using Node.js & Telegraf",
+      desc: "Автоматизировал напоминалки о расписании (Node.js + telegraf).",
       link: "https://github.com/youruser/telegram-scheduler-bot",
     },
     {
-      title: "2‑D Platformer",
-      desc: "Mini game prototype built with Python & Pygame",
+      title: "2-D Platformer (Prototype)",
+      desc: "Игровой набросок на Python + Pygame.",
       link: "https://github.com/youruser/platformer",
     },
     {
-      title: "Responsive Portfolio",
-      desc: "This site – built with React + Tailwind",
+      title: "Responsive Portfolio (этот сайт)",
+      desc: "React + Tailwind + Framer Motion.",
       link: "#",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white">
-      {/* Hero */}
-      <header className="container mx-auto px-4 py-20 flex flex-col items-center text-center">
+    <main className="min-h-screen flex flex-col">
+      {/* ── HERO ───────────────────────── */}
+      <section className="flex-1 flex flex-col items-center justify-center bg-gradient-to-b from-indigo-50 to-white dark:from-slate-900 dark:to-slate-950 px-4">
         <motion.h1
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-bold mb-4 tracking-tight"
+          transition={{ duration: .7 }}
+          className="text-3xl md:text-5xl font-bold text-center mb-4"
         >
-          ✱Your&nbsp;Name✱
+          <span className="text-indigo-600 dark:text-indigo-400">Your Name</span>
+          <span className="mx-1">·</span>
+          Junior Developer
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="max-w-xl text-lg md:text-xl text-slate-300"
-        >
-          Junior developer, perpetual prototyper & lifelong learner.
-        </motion.p>
-        <div className="mt-8 flex gap-4">
-          <a href="mailto:you@example.com">
-            <Button size="lg" variant="secondary">
-              <Mail className="mr-2 h-4 w-4" /> Hire me
-            </Button>
-          </a>
-          <a href="https://github.com/youruser">
-            <Button size="lg" variant="outline">
-              <Github className="mr-2 h-4 w-4" /> GitHub
-            </Button>
-          </a>
-        </div>
-      </header>
 
-      {/* Projects */}
-      <section className="container mx-auto px-4 pb-24">
-        <h2 className="text-3xl font-semibold mb-8">Projects</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <p className="text-center max-w-xl text-gray-600 dark:text-gray-400 mb-6">
+          Люблю быстрые прототипы, вечный рефакторинг и котиков в консоли.
+        </p>
+
+        <div className="flex gap-3">
+          <Button asChild size="lg">
+            <a href="mailto:you@example.com">
+              <Mail className="mr-2 h-4 w-4" /> Hire me
+            </a>
+          </Button>
+          <Button asChild variant="secondary" size="lg">
+            <a href="https://github.com/youruser">
+              <Github className="mr-2 h-4 w-4" /> GitHub
+            </a>
+          </Button>
+        </div>
+      </section>
+
+      {/* ── PROJECTS ───────────────────── */}
+      <section className="container mx-auto py-16 px-4">
+        <h2 className="text-2xl font-semibold mb-8">Projects</h2>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              <Card className="h-full bg-white/5 backdrop-blur-md">
-                <CardContent className="p-6 flex flex-col h-full">
-                  <h3 className="text-xl font-medium mb-2">{p.title}</h3>
-                  <p className="text-slate-300 flex-grow">{p.desc}</p>
+              <Card className="h-full">
+                <CardContent className="p-6 flex flex-col">
+                  <h3 className="text-lg font-medium mb-2">{p.title}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 flex-1">
+                    {p.desc}
+                  </p>
                   <a
                     href={p.link}
-                    className="mt-4 text-indigo-300 hover:text-indigo-100 underline"
+                    target="_blank"
+                    className="mt-4 text-indigo-600 hover:underline"
                   >
                     View on GitHub →
                   </a>
@@ -85,9 +86,10 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <footer className="py-8 text-center text-sm text-slate-400">
-        © {new Date().getFullYear()} ✱Your Name✱. Built with React & Tailwind.
+      {/* ── FOOTER ─────────────────────── */}
+      <footer className="text-center py-6 text-sm text-gray-500 dark:text-gray-600">
+        © {new Date().getFullYear()} Your Name. Crafted with React & Tailwind.
       </footer>
-    </div>
+    </main>
   );
 }
