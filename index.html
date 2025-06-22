@@ -1,0 +1,93 @@
+import { motion } from "framer-motion";
+import { Github, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+export default function Portfolio() {
+  const projects = [
+    {
+      title: "Telegram Scheduler Bot",
+      desc: "Automates daily timetable notifications using Node.js & Telegraf",
+      link: "https://github.com/youruser/telegram-scheduler-bot",
+    },
+    {
+      title: "2‑D Platformer",
+      desc: "Mini game prototype built with Python & Pygame",
+      link: "https://github.com/youruser/platformer",
+    },
+    {
+      title: "Responsive Portfolio",
+      desc: "This site – built with React + Tailwind",
+      link: "#",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white">
+      {/* Hero */}
+      <header className="container mx-auto px-4 py-20 flex flex-col items-center text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-6xl font-bold mb-4 tracking-tight"
+        >
+          ✱Your&nbsp;Name✱
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="max-w-xl text-lg md:text-xl text-slate-300"
+        >
+          Junior developer, perpetual prototyper & lifelong learner.
+        </motion.p>
+        <div className="mt-8 flex gap-4">
+          <a href="mailto:you@example.com">
+            <Button size="lg" variant="secondary">
+              <Mail className="mr-2 h-4 w-4" /> Hire me
+            </Button>
+          </a>
+          <a href="https://github.com/youruser">
+            <Button size="lg" variant="outline">
+              <Github className="mr-2 h-4 w-4" /> GitHub
+            </Button>
+          </a>
+        </div>
+      </header>
+
+      {/* Projects */}
+      <section className="container mx-auto px-4 pb-24">
+        <h2 className="text-3xl font-semibold mb-8">Projects</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {projects.map((p, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+            >
+              <Card className="h-full bg-white/5 backdrop-blur-md">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <h3 className="text-xl font-medium mb-2">{p.title}</h3>
+                  <p className="text-slate-300 flex-grow">{p.desc}</p>
+                  <a
+                    href={p.link}
+                    className="mt-4 text-indigo-300 hover:text-indigo-100 underline"
+                  >
+                    View on GitHub →
+                  </a>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <footer className="py-8 text-center text-sm text-slate-400">
+        © {new Date().getFullYear()} ✱Your Name✱. Built with React & Tailwind.
+      </footer>
+    </div>
+  );
+}
