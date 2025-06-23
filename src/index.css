@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ============= */
+/* Кастомные стили */
+/* ============= */
+
+body {
+  @apply bg-gray-100 text-gray-800 antialiased;
+  @apply dark:bg-gray-900 dark:text-gray-200;
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  @apply text-blue-600 hover:underline dark:text-blue-400;
+}
+
+/* Хедер */
+header {
+  @apply bg-white shadow-md py-6 mb-8 dark:bg-gray-800;
+}
+
+/* Секция “Проекты” */
+.projects {
+  @apply grid gap-8 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+/* Карточки */
+.card {
+  @apply bg-white rounded-2xl shadow p-6 hover:shadow-lg transition-shadow;
+  @apply dark:bg-gray-800 dark:shadow-gray-700;
+}
+
+/* Кнопка загрузки игры */
+.btn-download {
+  @apply inline-block bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors;
+}
+
+/* Футер */
+footer {
+  @apply text-center text-sm text-gray-600 mt-12 py-4 dark:text-gray-400;
+}
