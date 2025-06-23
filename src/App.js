@@ -74,7 +74,7 @@ function App() {
         <h1 className="text-4xl font-extrabold mb-2">Ярослав Павленко</h1>
         <p className="text-lg mb-4">Вивчаю програмування та створюю корисні проєкти</p>
         <a
-          href="https://t.me/AnvilBrain"
+          href="https://t.me/Anvil_pv"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-600 transition"
