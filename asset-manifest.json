@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ProtfolioKNU/static/css/main.682ad760.css",
-    "main.js": "/ProtfolioKNU/static/js/main.f94ceb1e.js",
+    "main.css": "/ProtfolioKNU/static/css/main.5a72034e.css",
+    "main.js": "/ProtfolioKNU/static/js/main.dfcb5464.js",
     "index.html": "/ProtfolioKNU/index.html",
-    "main.682ad760.css.map": "/ProtfolioKNU/static/css/main.682ad760.css.map",
-    "main.f94ceb1e.js.map": "/ProtfolioKNU/static/js/main.f94ceb1e.js.map"
+    "main.5a72034e.css.map": "/ProtfolioKNU/static/css/main.5a72034e.css.map",
+    "main.dfcb5464.js.map": "/ProtfolioKNU/static/js/main.dfcb5464.js.map"
   },
   "entrypoints": [
-    "static/css/main.682ad760.css",
-    "static/js/main.f94ceb1e.js"
+    "static/css/main.5a72034e.css",
+    "static/js/main.dfcb5464.js"
   ]
 }
