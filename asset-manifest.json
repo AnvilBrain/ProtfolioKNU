@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/ProtfolioKNU/static/css/main.5852f5cd.css",
-    "main.js": "/ProtfolioKNU/static/js/main.9c38a2ad.js",
-    "static/media/TurnToe.apk": "/ProtfolioKNU/static/media/TurnToe.44d09f5f169bddd4538f.apk",
+    "main.css": "/ProtfolioKNU/static/css/main.a64c265c.css",
+    "main.js": "/ProtfolioKNU/static/js/main.b6d44a55.js",
     "index.html": "/ProtfolioKNU/index.html",
-    "main.5852f5cd.css.map": "/ProtfolioKNU/static/css/main.5852f5cd.css.map",
-    "main.9c38a2ad.js.map": "/ProtfolioKNU/static/js/main.9c38a2ad.js.map"
+    "main.a64c265c.css.map": "/ProtfolioKNU/static/css/main.a64c265c.css.map",
+    "main.b6d44a55.js.map": "/ProtfolioKNU/static/js/main.b6d44a55.js.map"
   },
   "entrypoints": [
-    "static/css/main.5852f5cd.css",
-    "static/js/main.9c38a2ad.js"
+    "static/css/main.a64c265c.css",
+    "static/js/main.b6d44a55.js"
   ]
 }
