@@ -17,7 +17,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
-    // dark mode toggle
+    // тёмная тема
     document.documentElement.classList.toggle('dark', darkMode)
   }, [darkMode])
 
@@ -39,9 +39,9 @@ function App() {
       desc:  'Python-бот для автоматичної публікації'
     },
     {
-      title: 'TurnToe – гра на Android (APK)',
+      title: 'TurnToe — гра на Android (APK)',
       href:  `${process.env.PUBLIC_URL}/download/TurnToe.apk`,
-      desc:  'Розроблена в Android Studio',
+      desc:  'Розроблена в Android Studio (Kotlin)',
       downloadSize: '8,5 МБ'
     },
     {
@@ -57,19 +57,19 @@ function App() {
       {/* Навігація */}
       <nav
         data-aos="fade-down"
-        className="flex justify-between items-center px-8 py-4 bg-white dark:bg-gray-800 shadow"
+        className="flex flex-wrap justify-between items-center px-4 sm:px-8 py-4 bg-white dark:bg-gray-800 shadow"
       >
-        <span className="text-xl font-bold">Моє портфоліо</span>
-        <div className="flex items-center space-x-4 text-blue-600">
-          <a href="#about"    className="hover:underline">About</a>
-          <a href="#skills"   className="hover:underline">Skills</a>
-          <a href="#projects" className="hover:underline">Projects</a>
-          <a href="#contact"  className="hover:underline">Contact</a>
+        <span className="text-xl font-bold whitespace-nowrap">Моє портфоліо</span>
+        <div className="flex flex-wrap items-center space-x-3 sm:space-x-6 text-blue-600">
+          <a href="#about"    className="hover:underline whitespace-nowrap">About</a>
+          <a href="#skills"   className="hover:underline whitespace-nowrap">Skills</a>
+          <a href="#projects" className="hover:underline whitespace-nowrap">Projects</a>
+          <a href="#contact"  className="hover:underline whitespace-nowrap">Contact</a>
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
           >
-            {darkMode ? <FaSun /> : <FaMoon />}
+            {darkMode ? <FaSun size={18}/> : <FaMoon size={18}/>}
           </button>
         </div>
       </nav>
@@ -105,7 +105,7 @@ function App() {
           <p>
             Привіт! Мене звати Ярослав Павленко. Я захоплююся розробкою програмного забезпечення:
             пишу боти для Telegram, створюю Android-ігри та веб-додатки. Люблю швидко вчитися
-            новим технологіям і експериментувати з Python, JavaScript, C++ (ESP32) та Android Studio.
+            новим технологіям і експериментувати з Python, JavaScript, C++ (ESP32) та Kotlin.
           </p>
         </div>
       </section>
@@ -154,15 +154,20 @@ function App() {
                 className="text-lg font-semibold text-blue-600 hover:underline"
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                download={downloadSize ? true : undefined}
               >
                 {title}
               </a>
               <p className="text-sm mt-1">{desc}</p>
+
+              {/* Если есть размер, показываем кнопку */}
               {downloadSize && (
-                <span className="text-xs text-gray-500 dark:text-gray-400 mt-2 block">
-                  Розмір: {downloadSize}
-                </span>
+                <a
+                  href={href}
+                  download
+                  className="inline-block mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition"
+                >
+                  Завантажити ({downloadSize})
+                </a>
               )}
             </div>
           ))}
