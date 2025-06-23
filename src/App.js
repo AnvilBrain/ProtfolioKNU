@@ -1,4 +1,5 @@
 // src/App.js
+import TurnToeAPK from './download/TurnToe.apk'
 import React, { useState, useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -17,7 +18,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
-    // тёмная тема
+    // тумблер тёмной темы
     document.documentElement.classList.toggle('dark', darkMode)
   }, [darkMode])
 
@@ -40,7 +41,7 @@ function App() {
     },
     {
       title: 'TurnToe — гра на Android (APK)',
-      href:  `${process.env.PUBLIC_URL}/download/TurnToe.apk`,
+      href:  TurnToeAPK,
       desc:  'Розроблена в Android Studio (Kotlin)',
       downloadSize: '8,5 МБ'
     },
@@ -57,19 +58,19 @@ function App() {
       {/* Навігація */}
       <nav
         data-aos="fade-down"
-        className="flex flex-wrap justify-between items-center px-4 sm:px-8 py-4 bg-white dark:bg-gray-800 shadow"
+        className="flex justify-between items-center px-8 py-4 bg-white dark:bg-gray-800 shadow"
       >
-        <span className="text-xl font-bold whitespace-nowrap">Моє портфоліо</span>
-        <div className="flex flex-wrap items-center space-x-3 sm:space-x-6 text-blue-600">
-          <a href="#about"    className="hover:underline whitespace-nowrap">About</a>
-          <a href="#skills"   className="hover:underline whitespace-nowrap">Skills</a>
-          <a href="#projects" className="hover:underline whitespace-nowrap">Projects</a>
-          <a href="#contact"  className="hover:underline whitespace-nowrap">Contact</a>
+        <span className="text-xl font-bold">Моє портфоліо</span>
+        <div className="flex items-center space-x-4 text-blue-600">
+          <a href="#about"    className="hover:underline">About</a>
+          <a href="#skills"   className="hover:underline">Skills</a>
+          <a href="#projects" className="hover:underline">Projects</a>
+          <a href="#contact"  className="hover:underline">Contact</a>
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
           >
-            {darkMode ? <FaSun size={18}/> : <FaMoon size={18}/>}
+            {darkMode ? <FaSun /> : <FaMoon />}
           </button>
         </div>
       </nav>
@@ -154,20 +155,15 @@ function App() {
                 className="text-lg font-semibold text-blue-600 hover:underline"
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                download={downloadSize ? true : undefined}
               >
                 {title}
               </a>
               <p className="text-sm mt-1">{desc}</p>
-
-              {/* Если есть размер, показываем кнопку */}
               {downloadSize && (
-                <a
-                  href={href}
-                  download
-                  className="inline-block mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition"
-                >
-                  Завантажити ({downloadSize})
-                </a>
+                <span className="text-xs text-gray-500 dark:text-gray-400 mt-2 block">
+                  Розмір: {downloadSize}
+                </span>
               )}
             </div>
           ))}
